@@ -1,18 +1,61 @@
 <header>
-  <p>Header</p>
+  <div class="title">Svelte</div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
 <style>
   header {
     display: flex;
-    justify-content: center;
+    flex-flow: row wrap;
     background-color: aliceblue;
   }
 
-  p {
+  .title {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    justify-content: center;
     color: #ff3e00;
     text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
+    font-size: 3em;
+    font-weight: 500;
+  }
+
+  nav ul {
+    display: flex;
+    flex-flow: column wrap;
+    list-style-type: none;
+    padding: 0.5rem;
+  }
+
+  nav li {
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--color)
+  }
+
+  @media (min-width: 550px) {
+    nav ul {
+      flex-flow: row wrap;
+      list-style-type: none;
+    }
+  }
+  @media (min-width: 800px) {
+    header {
+      display: flex;
+      justify-content: center;
+    }
   }
 </style>
