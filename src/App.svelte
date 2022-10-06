@@ -1,9 +1,12 @@
 <script>
   import Header from "./Header.svelte";
+  import Subscribe from "./Subscribe.svelte";
+
   export let name;
 </script>
 
 <Header />
+<Subscribe />
 <main>
   <section>
     <div class="box box1">01</div>
