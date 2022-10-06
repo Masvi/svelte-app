@@ -17,17 +17,6 @@
     background-color: aliceblue;
   }
 
-  .title {
-    display: flex;
-    padding: 1rem;
-    width: 100%;
-    justify-content: center;
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 3em;
-    font-weight: 500;
-  }
-
   nav ul {
     display: flex;
     flex-flow: column wrap;

@@ -23,6 +23,18 @@
     padding: 0;
   }
 
+  /* global style - can use this class at any component */
+  :global(.title) {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    justify-content: center;
+    color: #ff3e00;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 500;
+  }
+
   .box {
     display: flex;
     align-items: center;
