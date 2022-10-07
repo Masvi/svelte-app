@@ -8,9 +8,16 @@
     countLabel: "Number of subscribes:",
     maxLabel: "Max of subscribes:",
   };
+
+  const navLabels = [
+    { name: "Home", path: "/" } ,
+    { name: "Projects", path: "/projects" } ,
+    { name: "About", path: "/about" } ,
+    { name: "Contact", path: "/contact" } ,
+  ];
 </script>
 
-<Header {subtitle} />
+<Header {subtitle} navLabels={navLabels} />
 <Subscribe {...obj} />
 <main>
   <section>

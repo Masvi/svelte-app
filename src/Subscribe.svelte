@@ -35,7 +35,7 @@
     justify-content: space-around;
     padding: 1rem;
     height: 100px;
-    background-color: var(--color5);
+    background-color: rgb(245, 247, 250);
   }
 
   button {

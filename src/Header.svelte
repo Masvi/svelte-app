@@ -1,6 +1,9 @@
 <script>
-  // prop definition 
+  // prop definition
   export let subtitle = "Fallback in case the father dont provide the prop";
+  export let navLabels = [];
+
+  console.log(navLabels)
 </script>
 
 <header>
@@ -8,10 +11,9 @@
   <div class="subtitle">{subtitle}</div>
   <nav>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      {#each navLabels as label}
+        <li><a href="#">{label.name}</a></li>
+      {/each}
     </ul>
   </nav>
 </header>
@@ -21,6 +23,7 @@
     display: flex;
     flex-flow: row wrap;
     background-color: aliceblue;
+    margin-bottom: 1rem;
   }
 
   .subtitle {
@@ -28,7 +31,7 @@
     justify-content: center;
     padding: 0 1rem 1rem 1rem;
     width: 100%;
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: var(--color2);
   }
 
