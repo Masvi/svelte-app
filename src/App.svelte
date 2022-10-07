@@ -2,11 +2,16 @@
   import Header from "./Header.svelte";
   import Subscribe from "./Subscribe.svelte";
 
-  export let name;
+  let subtitle = "Frontendmasters introduction - by Rich Harris";
+
+  const obj = {
+    countLabel: "Number of subscribes:",
+    maxLabel: "Max of subscribes:",
+  };
 </script>
 
-<Header />
-<Subscribe />
+<Header {subtitle} />
+<Subscribe {...obj} />
 <main>
   <section>
     <div class="box box1">01</div>
@@ -29,7 +34,7 @@
   /* global style - can use this class at any component */
   :global(.title) {
     display: flex;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     width: 100%;
     justify-content: center;
     color: #ff3e00;

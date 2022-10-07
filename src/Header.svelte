@@ -1,5 +1,11 @@
+<script>
+  // prop definition 
+  export let subtitle = "Fallback in case the father dont provide the prop";
+</script>
+
 <header>
   <div class="title">Svelte</div>
+  <div class="subtitle">{subtitle}</div>
   <nav>
     <ul>
       <li><a href="#">Home</a></li>
@@ -17,6 +23,15 @@
     background-color: aliceblue;
   }
 
+  .subtitle {
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem 1rem 1rem;
+    width: 100%;
+    font-size: .8rem;
+    color: var(--color2);
+  }
+
   nav ul {
     display: flex;
     flex-flow: column wrap;
@@ -26,13 +41,15 @@
 
   nav li {
     margin-bottom: 0.5rem;
-    padding: 0.2rem;
+    padding: 0.5rem;
     cursor: pointer;
   }
 
   nav a {
     text-decoration: none;
-    color: var(--color)
+    color: var(--color2);
+    font-weight: 500;
+    font-size: 1.3rem;
   }
 
   @media (min-width: 550px) {

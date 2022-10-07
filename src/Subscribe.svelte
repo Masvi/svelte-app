@@ -7,8 +7,12 @@
     can have many of them as we like
   */
 
-  $: console.log('max: ', maxSubscribes);
-  $: if (count >= 5 ) console.log('count: ', count);
+  /* props */
+  export let countLabel;
+  export let maxLabel;
+
+  $: console.log("max: ", maxSubscribes);
+  $: if (count >= 5) console.log("count: ", count);
 
   function handleClick() {
     count += 1;
@@ -17,11 +21,9 @@
 
 <section>
   <button on:click={handleClick}>Subscribe</button>
-  <span>Number of subscribes: {count}</span>
+  <span> {countLabel} {count}</span>
   <span
-    >Max of subscribes: {maxSubscribes <= 0
-      ? "sold out"
-      : maxSubscribes}</span
+    >{maxLabel} {maxSubscribes <= 0 ? "sold out" : maxSubscribes}</span
   >
 </section>
 
