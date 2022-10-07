@@ -1,6 +1,6 @@
 <script>
   let count = 0;
-  $: maxSubscribes = 5 - count;
+  $: maxSubscribes = count;
   /* 
     the $: allow to rerun every time the value of count changes
     this is called a reactive declaration 
@@ -20,11 +20,11 @@
 </script>
 
 <section>
-  <button on:click={handleClick}>Subscribe</button>
+  {#if maxSubscribes != 5}
+    <button on:click={handleClick}>Subscribe</button>
+  {/if}
   <span> {countLabel} {count}</span>
-  <span
-    >{maxLabel} {maxSubscribes <= 0 ? "sold out" : maxSubscribes}</span
-  >
+  <span> {maxLabel} {maxSubscribes < 5 ? maxSubscribes : "sold out"}</span>
 </section>
 
 <style>
