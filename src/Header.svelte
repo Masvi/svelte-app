@@ -11,8 +11,8 @@
   <div class="subtitle">{subtitle}</div>
   <nav>
     <ul>
-      {#each navLabels as label}
-        <li><a href="#">{label.name}</a></li>
+      {#each navLabels as { name }, i}
+        <li><a href="#{i}">{name}</a></li>
       {/each}
     </ul>
   </nav>

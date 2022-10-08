@@ -2,7 +2,7 @@
   import Header from "./Header.svelte";
   import Subscribe from "./Subscribe.svelte";
 
-  let subtitle = "Frontendmasters introduction - by Rich Harris";
+  let subtitle = "A component framework you can use to build high-performance web applications. ";
 
   const obj = {
     countLabel: "Number of subscribes:",
