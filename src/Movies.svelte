@@ -1,10 +1,20 @@
 <script>
-  console.log(process.env('PRIVATE_KEY'));
+  import { onMount } from "svelte";
+
+  const { env } = __myapp;
+
   async function getMovies() {
-    const res = await fetch(`https://the-one-api.dev/v2`, {
+    const res = await fetch(`${env.BASE_URL}`, {
       headers: {
-        Authorization: `Bearer ${PRIVATE_KEY}`,
+        Accept: "application/json",
+        Authorization: `Bearer ${env.PRIVATE_KEY}`,
       },
     });
+    const data = await res.json();
+    console.log(data)
   }
+
+  onMount(() => {
+    getMovies();
+  });
 </script>

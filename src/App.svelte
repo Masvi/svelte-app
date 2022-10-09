@@ -1,6 +1,7 @@
 <script>
   import Header from "./Header.svelte";
   import Subscribe from "./Subscribe.svelte";
+  import Movies from "./Movies.svelte";
 
   let subtitle = "A component framework you can use to build high-performance web applications. ";
 
@@ -27,6 +28,7 @@
     <div class="box box4">04</div>
     <div class="box box5">05</div>
     <div class="box box6">06</div>
+    <Movies />
   </section>
 </main>
 
