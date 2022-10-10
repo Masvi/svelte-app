@@ -24,7 +24,7 @@
     <button on:click={handleClick}>Subscribe</button>
   {/if}
   <span> {countLabel} {count}</span>
-  <span> {maxLabel} {maxSubscribes < 5 ? maxSubscribes : "sold out"}</span>
+  <span> {maxSubscribes < 5 ? `${maxLabel} ${maxSubscribes}` : "sold out"}</span>
 </section>
 
 <style>

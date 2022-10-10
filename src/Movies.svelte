@@ -46,6 +46,7 @@
     height: 300px;
     margin-bottom: 2px;
     background-color: var(--color2);
+    padding: .5rem;
   }
 
   .message {
@@ -58,7 +59,7 @@
 
   @media (min-width: 550px) {
     .box {
-      flex-basis: 48%;
+      flex-basis: 46%;
     }
   }
 

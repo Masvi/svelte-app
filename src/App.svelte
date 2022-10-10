@@ -4,7 +4,7 @@
   import Movies from "./Movies.svelte";
 
   let subtitle =
-    "A component framework you can use to build high-performance web applications. ";
+    "Svelte - a component framework you can use to build high-performance web applications. ";
 
   const obj = {
     countLabel: "Number of subscribes:",
