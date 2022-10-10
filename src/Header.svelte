@@ -2,12 +2,10 @@
   // prop definition
   export let subtitle = "Fallback in case the father dont provide the prop";
   export let navLabels = [];
-
-  console.log(navLabels)
 </script>
 
 <header>
-  <div class="title">Svelte</div>
+  <div class="title">Lord of Rings</div>
   <div class="subtitle">{subtitle}</div>
   <nav>
     <ul>

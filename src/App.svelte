@@ -42,7 +42,6 @@
     width: 100%;
     justify-content: center;
     color: #ff3e00;
-    text-transform: uppercase;
     font-size: 3em;
     font-weight: 500;
   }
