@@ -25,9 +25,9 @@
   <div class="message">waiting...</div>
 {:then movies}
   {#if movies}
-    {#each movies as { name}}
+    {#each movies as { name }}
       <div class="box">
-        {name}
+        { name }
       </div>
     {/each}
   {/if}
