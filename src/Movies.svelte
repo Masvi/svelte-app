@@ -43,7 +43,7 @@
     color: white;
     font-size: 1rem;
     font-weight: 500;
-    height: 300px;
+    height: 90px;
     margin-bottom: 2px;
     background-color: var(--color2);
     padding: .5rem;

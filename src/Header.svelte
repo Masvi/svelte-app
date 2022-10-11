@@ -5,7 +5,7 @@
 </script>
 
 <header>
-  <div class="title">Lord of Rings</div>
+  <div class="title">Svelte</div>
   <div class="subtitle">{subtitle}</div>
   <nav>
     <ul>

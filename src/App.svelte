@@ -4,7 +4,7 @@
   import Movies from "./Movies.svelte";
 
   let subtitle =
-    "Svelte - a component framework you can use to build high-performance web applications. ";
+    "A component framework you can use to build high-performance web applications. ";
 
   const obj = {
     countLabel: "Number of subscribes:",
@@ -23,6 +23,14 @@
 <Subscribe {...obj} />
 <main>
   <section>
+    <div class="box">01</div>
+    <div class="box">02</div>
+  </section>
+  <section>
+    <div class="section_title">Movies</div>
+    <div class="section_subtitle">
+      Lord of Rings movies called from an API. This api provides a bunch of data about the movies, books and characters.
+    </div>
     <Movies />
   </section>
 </main>
@@ -33,6 +41,41 @@
     margin: 0 auto;
     max-width: 1200px;
     padding: 0;
+  }
+
+  section {
+    padding: .1rem;
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 120px;
+    margin-bottom: 2px;
+    background-color: var(--color3);
+    padding: .5rem;
+  }
+
+  .section_title {
+    display: flex;    
+    font-size: 2rem;
+    padding-top: 1rem;
+    color: var(--color2);
+    width: 100%;
+  }
+
+  .section_subtitle {
+    display: flex;
+    text-align: start;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 0.8rem;
+    color: var(--color2);
   }
 
   /* global style - can use this class at any component */
@@ -53,6 +96,10 @@
       justify-content: space-between;
       margin: 1rem;
     }
+
+    .box {
+      flex-basis: 46%;
+    }
   }
 
   @media (min-width: 800px) {
@@ -61,6 +108,10 @@
       flex-flow: row wrap;
       justify-content: space-between;
       margin: 1rem;
+    }
+
+    .box {
+      flex-basis: 48%;
     }
   }
 </style>
