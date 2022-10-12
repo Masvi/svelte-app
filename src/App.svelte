@@ -5,6 +5,7 @@
   import Events from "./Events.svelte";
   import Binding from "./Binding.svelte";
   import Options from "./Options.svelte";
+  import Select from "./Select.svelte";
 
   let subtitle =
     "A component framework you can use to build high-performance web applications. ";
@@ -50,11 +51,13 @@
       <Binding />
     </div>
     <div class="box inside">
-      <div class="section_subtitle inside-title">
-        Group inputs
-      </div>
+      <div class="section_subtitle inside-title">Group inputs</div>
       <Options />
     </div>
+    <div class="box mid inside">
+      <Select />
+    </div>
+    <div class="box mid inside" />
   </section>
 
   <section>
@@ -157,6 +160,10 @@
 
     .box {
       flex-basis: 28%;
+    }
+
+    .mid {
+      flex-basis: 46%;
     }
   }
 </style>
