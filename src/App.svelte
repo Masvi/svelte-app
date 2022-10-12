@@ -3,6 +3,7 @@
   import Subscribe from "./Subscribe.svelte";
   import Movies from "./Movies.svelte";
   import Events from "./Events.svelte";
+  import Binding from "./Binding.svelte";
 
   let subtitle =
     "A component framework you can use to build high-performance web applications. ";
@@ -17,7 +18,7 @@
 
   function handleEvent(event) {
     if (event.detail.count > 5) {
-      return messageByEvent = "mensagem default"
+      return (messageByEvent = "mensagem default");
     }
     messageByEvent = event.detail.text;
   }
@@ -31,8 +32,8 @@
 </script>
 
 <Header {subtitle} {navLabels} />
-<Subscribe {...obj} />
 <main>
+  <Subscribe {...obj} />
   <section>
     <div class="box inside">
       <div class="section_subtitle inside-title">
@@ -41,7 +42,15 @@
       </div>
       <Events on:myEventName={handleEvent} {messageByEvent} />
     </div>
-    <div class="box">02</div>
+    <div class="box inside">
+      <div class="section_subtitle inside-title">
+        Input binding. Changes on the name variable will update the input value
+      </div>
+      <Binding />
+    </div>
+    <div class="box inside">
+ 
+    </div>
   </section>
 
   <section>
@@ -143,7 +152,7 @@
     }
 
     .box {
-      flex-basis: 48%;
+      flex-basis: 28%;
     }
   }
 </style>
