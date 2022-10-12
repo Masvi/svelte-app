@@ -2,6 +2,7 @@
   import Header from "./Header.svelte";
   import Subscribe from "./Subscribe.svelte";
   import Movies from "./Movies.svelte";
+  import Events from "./Events.svelte";
 
   let subtitle =
     "A component framework you can use to build high-performance web applications. ";
@@ -10,6 +11,16 @@
     countLabel: "Number of subscribes:",
     maxLabel: "Max of subscribes:",
   };
+
+  let messageByEvent = "";
+  let countProp = null;
+
+  function handleEvent(event) {
+    if (event.detail.count > 5) {
+      return messageByEvent = "mensagem default"
+    }
+    messageByEvent = event.detail.text;
+  }
 
   const navLabels = [
     { name: "Home", path: "/" },
@@ -23,13 +34,21 @@
 <Subscribe {...obj} />
 <main>
   <section>
-    <div class="box">01</div>
+    <div class="box inside">
+      <div class="section_subtitle inside-title">
+        Creating a communication between components using events. They must
+        create an event dispatcher
+      </div>
+      <Events on:myEventName={handleEvent} {messageByEvent} />
+    </div>
     <div class="box">02</div>
   </section>
+
   <section>
     <div class="section_title">Movies</div>
     <div class="section_subtitle">
-      Lord of Rings movies called from an API. This api provides a bunch of data about the movies, books and characters.
+      Lord of Rings movies called from an API. This api provides a bunch of data
+      about the movies, books and characters.
     </div>
     <Movies />
   </section>
@@ -44,7 +63,7 @@
   }
 
   section {
-    padding: .1rem;
+    padding: 0.1rem;
   }
 
   .box {
@@ -57,11 +76,24 @@
     height: 120px;
     margin-bottom: 2px;
     background-color: var(--color3);
-    padding: .5rem;
+    padding: 0.5rem;
+  }
+
+  .inside {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
+  .inside-title {
+    text-align: center !important;
+    color: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .section_title {
-    display: flex;    
+    display: flex;
     font-size: 2rem;
     padding-top: 1rem;
     color: var(--color2);
