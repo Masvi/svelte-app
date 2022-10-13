@@ -7,15 +7,16 @@
     { id: 3, text: "Angular is dead?" },
   ];
 
-  let answer ="";
+  let selected;
+  let answer ="fdsf";
 
   function handleSumit() {
-    console.log('here...')
+    console.log(selected)
   };
 </script>
 
 <form on:submit|preventDefault={handleSumit}>
-  <select>
+  <select bind:value={selected} on:change="{() => answer = ''}">
     {#each questions as question}
       <option value={question}>{question.text}</option>
     {/each}
