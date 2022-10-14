@@ -6,6 +6,7 @@
   import Binding from "./Binding.svelte";
   import Options from "./Options.svelte";
   import Select from "./Select.svelte";
+  import TodoList from "./TodoList.svelte";
 
   let subtitle =
     "A component framework you can use to build high-performance web applications. ";
@@ -57,7 +58,12 @@
     <div class="box mid inside">
       <Select />
     </div>
-    <div class="box mid inside" />
+  </section>
+
+  <section>
+    <div class="section_title">Todo List</div>
+    <div class="section_subtitle">An simple todo list</div>
+    <TodoList />
   </section>
 
   <section>
@@ -89,10 +95,11 @@
     color: white;
     font-size: 1rem;
     font-weight: 500;
-    height: 120px;
-    margin-bottom: 2px;
+    height: 150px;
+    margin-bottom: 0.5rem;
     background-color: var(--color3);
     padding: 0.5rem;
+    width: 100%;
   }
 
   .inside {
@@ -159,11 +166,11 @@
     }
 
     .box {
-      flex-basis: 28%;
+      flex-basis: 30%;
     }
 
     .mid {
-      flex-basis: 46%;
+      flex-basis: 100%;
     }
   }
 </style>
