@@ -34,6 +34,7 @@
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
+    margin: 1rem 0 1rem 0;
     height: 100px;
     background-color: rgb(245, 247, 250);
   }
@@ -59,7 +60,6 @@
     section {
       flex-flow: row wrap;
       padding: 0;
-      margin: 1rem;
     }
   }
 </style>

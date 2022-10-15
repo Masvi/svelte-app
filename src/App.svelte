@@ -81,11 +81,11 @@
     text-align: center;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 0;
+    padding: 1rem;
   }
 
   section {
-    padding: 0.1rem;
+    width: 100%;
   }
 
   .box {
@@ -99,7 +99,6 @@
     margin-bottom: 0.5rem;
     background-color: var(--color3);
     padding: 0.5rem;
-    width: 100%;
   }
 
   .inside {
@@ -149,11 +148,15 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-      margin: 1rem;
+     
     }
 
     .box {
       flex-basis: 46%;
+    }
+    
+    .mid {
+      flex-basis: 100%;
     }
   }
 
@@ -162,7 +165,6 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-      margin: 1rem;
     }
 
     .box {

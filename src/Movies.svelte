@@ -3,6 +3,8 @@
 
   const { env } = __myapp;
   let promise = null;
+  
+  onMount(() => (promise = getMovies()));
 
   async function getMovies() {
     const res = await fetch(`${env.BASE_URL}`, {
@@ -18,7 +20,6 @@
     }
     throw new Error();
   }
-  onMount(() => (promise = getMovies()));
 </script>
 
 {#await promise}
