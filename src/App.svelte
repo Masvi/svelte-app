@@ -7,6 +7,7 @@
   import Options from "./components/Options.svelte";
   import Select from "./components/Select.svelte";
   import TodoList from "./components/TodoList.svelte";
+  import Footer from "./Footer.svelte";
 
   let subtitle =
     "A component framework you can use to build high-performance web applications. ";
@@ -75,6 +76,7 @@
     <Movies />
   </section>
 </main>
+<Footer />
 
 <style>
   main {
@@ -148,13 +150,12 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-     
     }
 
     .box {
       flex-basis: 46%;
     }
-    
+
     .mid {
       flex-basis: 100%;
     }
