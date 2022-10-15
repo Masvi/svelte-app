@@ -3,7 +3,7 @@
 
   const { env } = __myapp;
   let promise = null;
-  
+
   onMount(() => (promise = getMovies()));
 
   async function getMovies() {

@@ -1,12 +1,12 @@
 <script>
   import Header from "./Header.svelte";
-  import Subscribe from "./Subscribe.svelte";
-  import Movies from "./Movies.svelte";
-  import Events from "./Events.svelte";
-  import Binding from "./Binding.svelte";
-  import Options from "./Options.svelte";
-  import Select from "./Select.svelte";
-  import TodoList from "./TodoList.svelte";
+  import Subscribe from "./components/Subscribe.svelte";
+  import Movies from "./components/Movies.svelte";
+  import Events from "./components/Events.svelte";
+  import Binding from "./components/Binding.svelte";
+  import Options from "./components/Options.svelte";
+  import Select from "./components/Select.svelte";
+  import TodoList from "./components/TodoList.svelte";
 
   let subtitle =
     "A component framework you can use to build high-performance web applications. ";
