@@ -7,7 +7,10 @@
   let newTask = "";
 
   function add() {
-    if (newTask != "") todos = todos.concat({ done: false, text: newTask });
+    if (newTask != "") {
+      todos = todos.concat({ done: false, text: newTask });
+      newTask = "";
+    }
   }
 
   function clear() {
