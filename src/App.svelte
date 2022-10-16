@@ -5,7 +5,7 @@
   import Events from "./components/Events.svelte";
   import Binding from "./components/Binding.svelte";
   import Options from "./components/Options.svelte";
-  import Select from "./components/Select.svelte";
+  import Forms from "./components/Forms.svelte";
   import TodoList from "./components/TodoList.svelte";
   import Footer from "./Footer.svelte";
 
@@ -56,9 +56,12 @@
       <div class="section_subtitle inside-title">Group inputs</div>
       <Options />
     </div>
-    <div class="box mid inside">
-      <Select />
-    </div>
+  </section>
+
+  <section>
+    <div class="section_title">Form</div>
+    <div class="section_subtitle">An simple form</div>
+    <Forms />
   </section>
 
   <section>
