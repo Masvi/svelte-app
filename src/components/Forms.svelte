@@ -1,3 +1,10 @@
+<script>
+  import Select from "./Select.svelte";
+  import Checkbox from "./Checkbox.svelte";
+
+  let options = ["Vue", "React", "Angular", "Svelte"]
+</script>
+
 <div class="forms">
   <div class="colum">
     <div class="group">
@@ -5,8 +12,12 @@
       <input id="name" type="text" />
     </div>
     <div class="group">
-      <label for="name">Last name</label>
-      <input id="name" type="text" />
+      <label for="lastname">Last name</label>
+      <input id="lastname" type="text" />
+    </div>
+    <div class="group">
+      <label for="name">Frameworks (only 2)</label>
+      <Checkbox options={options} />
     </div>
   </div>
   <div class="colum">
@@ -15,8 +26,8 @@
       <input id="name" type="text" />
     </div>
     <div class="group">
-      <label for="name">Food preffer</label>
-      <input id="name" type="text" />
+      <label for="name">The hardest question</label>
+      <Select />
     </div>
   </div>
 </div>
@@ -36,7 +47,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: start;
-    padding: .5rem 2rem 0 2rem;
+    padding: 0.5rem 2rem 0 2rem;
   }
 
   label {

@@ -8,39 +8,24 @@
   ];
 
   let selected;
-  let answer ="fdsf";
+  let answer = "";
 
   function handleSumit() {
-    console.log(selected)
-  };
+    console.log(selected);
+  }
 </script>
 
-<form on:submit|preventDefault={handleSumit}>
-  <select bind:value={selected} on:change="{() => answer = ''}">
-    {#each questions as question}
-      <option value={question}>{question.text}</option>
-    {/each}
-  </select>
-
-  <button type="submit" disabled={!answer}>Submit</button>
-</form>
+<select bind:value={selected} on:change={() => (answer = "")}>
+  {#each questions as question}
+    <option value={question}>{question.text}</option>
+  {/each}
+</select>
 
 <style>
   select {
     outline: none;
     background-color: white;
     color: var(--color2);
-  }
-
-  button {
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    height: 40px;
-    border-style: none;
-    background-color: var(--color4);
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
+    width: 100%;
   }
 </style>
