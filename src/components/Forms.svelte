@@ -2,7 +2,12 @@
   import Select from "./Select.svelte";
   import Checkbox from "./Checkbox.svelte";
 
-  let options = ["Vue", "React", "Angular", "Svelte"]
+  let options = [
+    { done: false, name: "Vue" },
+    { done: false, name: "React" },
+    { done: false, name: "Angular" },
+    { done: false, name: "Svelte" },
+  ];
 </script>
 
 <div class="forms">
@@ -17,7 +22,7 @@
     </div>
     <div class="group">
       <label for="name">Frameworks (only 2)</label>
-      <Checkbox options={options} />
+      <Checkbox {options} />
     </div>
   </div>
   <div class="colum">
