@@ -7,14 +7,10 @@
   }
 </script>
 
-<div class="checkbox" class:done={done}>
+<div class="checkbox" class:done>
   {#each options as item}
     <label>
-      <input
-        type="checkbox"
-        bind:checked={item.done}
-        on:click={handleCheck}
-      />
+      <input type="checkbox" bind:checked={item.done} on:click={handleCheck} />
       {item.name}
     </label>
   {/each}

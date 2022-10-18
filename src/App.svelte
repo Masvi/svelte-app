@@ -8,6 +8,18 @@
   import Forms from "./components/Forms.svelte";
   import TodoList from "./components/TodoList.svelte";
   import Footer from "./Footer.svelte";
+  import Counter from "./components/Counter.svelte";
+  import { count } from "./stores/counter";
+  import { onDestroy } from "svelte";
+
+  let count_value;
+
+  const unsubscribe = count.subscribe((value) => {
+    count_value = value;
+  });
+
+  // prevent memory leak
+  onDestroy(unsubscribe);
 
   let subtitle =
     "A component framework you can use to build high-performance web applications. ";
@@ -18,7 +30,6 @@
   };
 
   let messageByEvent = "";
-  let countProp = null;
 
   function handleEvent(event) {
     if (event.detail.count > 5) {
@@ -53,8 +64,10 @@
       <Binding />
     </div>
     <div class="box inside">
-      <div class="section_subtitle inside-title">Group inputs</div>
-      <Options />
+      <Counter />
+      <div class="counter">
+        <span>{count_value}</span>
+      </div>
     </div>
   </section>
 
@@ -106,6 +119,17 @@
     padding: 0.5rem;
   }
 
+  .counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  span {
+    font-size: 2rem;
+    padding: 1rem;
+    font-weight: 500;
+  }
   .inside {
     display: flex;
     flex-flow: row wrap;
