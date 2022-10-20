@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { fly } from "svelte/transition";
 
   const { env } = __myapp;
   let promise = null;
@@ -27,8 +28,8 @@
 {:then movies}
   {#if movies}
     {#each movies as { name }}
-      <div class="box">
-        { name }
+      <div class="box" transition:fly={{ y: 200, duration: 500 }}>
+        {name}
       </div>
     {/each}
   {/if}
@@ -47,7 +48,7 @@
     height: 90px;
     margin-bottom: 2px;
     background-color: var(--color2);
-    padding: .5rem;
+    padding: 0.5rem;
   }
 
   .message {
