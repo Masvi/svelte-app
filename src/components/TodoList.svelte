@@ -1,4 +1,6 @@
 <script>
+  import { fade } from "svelte/transition";
+
   let todos = [
     { done: true, text: "drink water" },
     { done: false, text: "build an app" },
@@ -21,7 +23,7 @@
 <div class="todo-list">
   <div class="list">
     {#each todos as todo}
-      <div class="form" class:done={todo.done}>
+      <div class="form" transition:fade class:done={todo.done}>
         <input class="check" type="checkbox" bind:checked={todo.done} />
         <input class="entry" type="text" bind:value={todo.text} />
       </div>
