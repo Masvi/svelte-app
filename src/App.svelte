@@ -72,6 +72,15 @@
   </section>
 
   <section>
+    <div class="section_title">Movies</div>
+    <div class="section_subtitle">
+      Lord of Rings movies called from an API. This api provides a bunch of data
+      about the movies, books and characters.
+    </div>
+    <Movies />
+  </section>
+
+  <section>
     <div class="section_title">Form</div>
     <div class="section_subtitle">An simple form</div>
     <Forms />
@@ -83,14 +92,6 @@
     <TodoList />
   </section>
 
-  <section>
-    <div class="section_title">Movies</div>
-    <div class="section_subtitle">
-      Lord of Rings movies called from an API. This api provides a bunch of data
-      about the movies, books and characters.
-    </div>
-    <Movies />
-  </section>
 </main>
 <Footer />
 
