@@ -7,7 +7,6 @@ This is a first look at Svelte. This app is just a bunch of things writen with t
 Install the dependencies...
 
 ```bash
-cd svelte-app
 npm install
 ```
 
