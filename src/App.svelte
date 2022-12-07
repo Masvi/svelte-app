@@ -33,6 +33,7 @@
 
   let messageByEvent = "";
   let value = "";
+  let term = "";
 
   function handleEvent(event) {
     if (event.detail.count > 5) {
@@ -41,9 +42,7 @@
     messageByEvent = event.detail.text;
   }
 
-  function handleSearch(e) {
-    console.log("handleSearch: ", e.detail);
-  }
+  function handleSearch(e) {}
 
   const navLabels = [
     { name: "Home", path: "/" },
@@ -89,12 +88,14 @@
         id="home-search"
         debounce={500}
         bind:value
-        on:type={handleSearch}
+        on:type={(e) => {
+          term = e.detail;
+        }}
       >
         <span slot="label">Buscar</span>
       </SearchInput>
     </div>
-    <Movies />
+    <Movies {term} />
   </section>
 
   <section>

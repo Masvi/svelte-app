@@ -4,6 +4,7 @@
 
   const { env } = __myapp;
   let promise = null;
+  export let term = "";
 
   onMount(() => (promise = getMovies()));
 
@@ -20,6 +21,12 @@
       return data.docs;
     }
     throw new Error();
+  }
+
+  $: if (term !== "") search();
+
+  function search() {
+    console.log(term);
   }
 </script>
 
