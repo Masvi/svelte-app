@@ -9,6 +9,8 @@
   import TodoList from "./components/TodoList.svelte";
   import Footer from "./Footer.svelte";
   import Counter from "./components/Counter.svelte";
+  import SearchInput from "./components/SearchInput.svelte";
+
   import { count } from "./stores/counter";
   import { onDestroy } from "svelte";
 
@@ -30,12 +32,17 @@
   };
 
   let messageByEvent = "";
+  let value = "";
 
   function handleEvent(event) {
     if (event.detail.count > 5) {
       return (messageByEvent = "mensagem default");
     }
     messageByEvent = event.detail.text;
+  }
+
+  function handleSearch(e) {
+    console.log("handleSearch: ", e.detail);
   }
 
   const navLabels = [
@@ -77,6 +84,16 @@
       Lord of Rings movies called from an API. This api provides a bunch of data
       about the movies, books and characters.
     </div>
+    <div class="section_subtitle">
+      <SearchInput
+        id="home-search"
+        debounce={500}
+        bind:value
+        on:type={handleSearch}
+      >
+        <span slot="label">Buscar</span>
+      </SearchInput>
+    </div>
     <Movies />
   </section>
 
@@ -91,7 +108,6 @@
     <div class="section_subtitle">An simple todo list</div>
     <TodoList />
   </section>
-
 </main>
 <Footer />
 
@@ -126,11 +142,12 @@
     align-items: center;
   }
 
-  span {
+  /* span {
     font-size: 2rem;
     padding: 1rem;
     font-weight: 500;
   }
+   */
   .inside {
     display: flex;
     flex-flow: row wrap;

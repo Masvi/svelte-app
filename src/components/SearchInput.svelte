@@ -2,21 +2,20 @@
   import { createEventDispatcher, afterUpdate } from "svelte";
 
   export let value = "";
-  export const debounce = 0;
-  export const label = "Label";
-  export const id = "search" + Math.random().toString(36);
+  export let debounce = 0;
+  export let label = "Label";
+  export let id = "";
 
   const dispatch = createEventDispatcher();
 
   let prevValue = value;
-  let timeout = undefined;
   let calling = false;
 
   const debounceFn = (fn) => {
     if (calling) return;
 
     calling = true;
-    timeout = setTimeout(() => {
+    setTimeout(() => {
       fn();
       calling = false;
     }, debounce);
@@ -33,7 +32,7 @@
   });
 </script>
 
-<form on:submit|preventDefault>
+<div class="search-input">
   <label>
     <slot name="label">{label}</slot>
   </label>
@@ -43,7 +42,8 @@
     placeholder="search..."
     autocomplete="off"
     spellcheck="false"
-    {id}
     bind:value
+    on:change
+    {id}
   />
-</form>
+</div>
