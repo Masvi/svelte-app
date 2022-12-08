@@ -3,10 +3,16 @@
   import { fly } from "svelte/transition";
 
   const { env } = __myapp;
-  let promise = null;
+  let loading = true;
+  let movies = [];
+  let unfiltred = []
   export let term = "";
 
-  onMount(() => (promise = getMovies()));
+  onMount(async () => {
+    movies = await getMovies()
+    unfiltred = movies;
+    loading = false;
+  });
 
   async function getMovies() {
     const res = await fetch(`${env.BASE_URL}`, {
@@ -23,26 +29,31 @@
     throw new Error();
   }
 
-  $: if (term !== "") search();
+  $: if (term) search();
 
   function search() {
-    console.log(term);
+    const formattedTerm = term.toLowerCase().trim();
+
+    if (formattedTerm.length > 1) {
+      const filtred = unfiltred.filter((movies) =>
+        movies.name.toLowerCase().includes(formattedTerm)
+      );
+      movies = filtred;
+    } else {
+      movies = unfiltred;
+    }
   }
 </script>
 
-{#await promise}
+{#if loading}
   <div class="message">waiting...</div>
-{:then movies}
-  {#if movies}
-    {#each movies as { name }}
-      <div class="box" transition:fly={{ y: 200, duration: 500 }}>
-        {name}
-      </div>
-    {/each}
-  {/if}
-{:catch}
-  <div class="message">Somenthing wrong!</div>
-{/await}
+{:else}
+  {#each movies as { name }}
+    <div class="box" transition:fly={{ y: 200, duration: 500 }}>
+      {name}
+    </div>
+  {/each}
+{/if}
 
 <style>
   .box {
