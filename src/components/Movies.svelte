@@ -5,11 +5,11 @@
   const { env } = __myapp;
   let loading = true;
   let movies = [];
-  let unfiltred = []
+  let unfiltred = [];
   export let term = "";
 
   onMount(async () => {
-    movies = await getMovies()
+    movies = await getMovies();
     unfiltred = movies;
     loading = false;
   });
@@ -34,7 +34,11 @@
   function search() {
     const formattedTerm = term.toLowerCase().trim();
 
-    if (formattedTerm.length > 1) {
+    if (formattedTerm.length <= 1 && movies.length !== unfiltred.length) {
+      return (movies = unfiltred);
+    }
+
+    if (formattedTerm.length > 0) {
       const filtred = unfiltred.filter((movies) =>
         movies.name.toLowerCase().includes(formattedTerm)
       );

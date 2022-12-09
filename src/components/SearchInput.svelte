@@ -43,7 +43,6 @@
     autocomplete="off"
     spellcheck="false"
     bind:value
-    on:change
     {id}
   />
 </div>
